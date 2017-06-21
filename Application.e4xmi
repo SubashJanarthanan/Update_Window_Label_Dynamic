@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_c3AF0cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.window.main" label="Update Window Label Dynamic" iconURI="platform:/plugin/Update_Window_Label_Dynamic/icons/1498080221_Update.png" tooltip="Update Window Label Dynamic" width="600" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_3cR1cFXeEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.perspectivestack.updateperspective">
+      <children xsi:type="advanced:Perspective" xmi:id="_62wYQFXeEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.perspective.updateperspective" label="updateperspective">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_-U56IFXeEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.partsashcontainer.0">
+          <children xsi:type="basic:PartStack" xmi:id="__KHD0FXeEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.partstack.0">
+            <children xsi:type="basic:Part" xmi:id="__-REoFXeEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.part.mainwindowpart" contributionURI="bundleclass://Update_Window_Label_Dynamic/update_window_label_dynamic.MainWindowPart" label="MainWindowPart"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_fwDGIFXdEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.menu.0">
+      <children xsi:type="menu:Menu" xmi:id="_gem1QFXdEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.menu.file" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_iLGzUFXdEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.handledmenuitem.exit" label="Exit" tooltip="Exit the application" command="_YkUCwFXeEeeeGZvEwkwEAQ"/>
+      </children>
+    </mainMenu>
+  </children>
+  <handlers xmi:id="_bM_VMFXeEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.handler.0" contributionURI="bundleclass://Update_Window_Label_Dynamic/update_window_label_dynamic.handlers.ExitHandler" command="_YkUCwFXeEeeeGZvEwkwEAQ"/>
+  <rootContext xmi:id="_c3AF2cjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_c3AF2sjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_c3AF28jYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_YkUCwFXeEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.command.exitcommand" commandName="exitcommand"/>
+  <addons xmi:id="_c3AF0sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_c3AF08jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_c3AF1MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_c3AF1cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_c3AF1sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_c3AF18jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_c3AF2MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
