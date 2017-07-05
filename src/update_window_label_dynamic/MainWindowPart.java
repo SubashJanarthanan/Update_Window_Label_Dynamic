@@ -2,13 +2,22 @@ package update_window_label_dynamic;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.inject.Named;
 
+import org.eclipse.e4.core.contexts.ContextInjectionFactory;
+import org.eclipse.e4.ui.di.AboutToShow;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
+import org.eclipse.e4.ui.model.application.ui.menu.MDirectMenuItem;
+import org.eclipse.e4.ui.model.application.ui.menu.MMenu;
+import org.eclipse.e4.ui.model.application.ui.menu.MMenuElement;
+import org.eclipse.e4.ui.model.application.ui.menu.MMenuFactory;
+import org.eclipse.e4.ui.services.internal.events.EventBroker;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.nebula.widgets.tablecombo.TableCombo;
 import org.eclipse.swt.SWT;
@@ -35,6 +44,9 @@ public class MainWindowPart {
 	/** The table combo. */
 	private TableCombo tableCombo;
 	
+	@Inject
+	private EventBroker eventBroker;
+	
 	/** The label. */
 	private Label label;
 	
@@ -60,6 +72,8 @@ public class MainWindowPart {
 	@PostConstruct
 	public void createUI(Composite parent){
 		
+		List<MMenuElement> items = null;
+		
 		final Composite childComposite = new Composite(parent, SWT.NONE);
 		childComposite.setLayout(new GridLayout(2 , false));
 		
@@ -82,6 +96,22 @@ public class MainWindowPart {
 				MWindow mWindow = (MWindow) modelService.find("org.eclipse.e4.window.main", application);
 				mWindow.setLabel(selectedText);
 				
+				MMenu mainMenu = mWindow.getMainMenu();
+				List<MMenuElement> children = mainMenu.getChildren();
+				MMenuElement mMenuElement = mainMenu.getChildren().get(1);
+				
+				MDirectMenuItem dynamicItem = MMenuFactory.INSTANCE
+						.createDirectMenuItem();
+				
+				dynamicItem.setLabel("New Dynamic Menu Item");
+				mMenuElement.getParent().getChildren().add(dynamicItem);
+				
+				for(int i = 0; i<=2;i++ ){
+					MDirectMenuItem menuItem1 = modelService.createModelElement(MDirectMenuItem.class); 
+					menuItem1.setLabel("Hello");
+					//mainMenu.getChildren().add(menuItem1);
+					children.add(menuItem1);
+				}
 			}
 			
 			@Override
@@ -100,6 +130,19 @@ public class MainWindowPart {
 		gridData.widthHint = 60;
 		txtListenerGroup.setLayoutData(gridData);
 		txtListenerGroup.setEditable(false);
+		
+
+	}
+	
+	@AboutToShow
+	public void aboutToShow(List<MMenuElement> items) {
+		for (int i = 0; i < 3; i++) {
+			MDirectMenuItem dynamicItem = MMenuFactory.INSTANCE
+					.createDirectMenuItem();
+			dynamicItem.setLabel("Dynamic Menu Item (" + new Date() + ")");
+			System.out.println("Entered");
+			items.add(dynamicItem);
+		}
 	}
 
 	/**

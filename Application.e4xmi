@@ -14,7 +14,15 @@
       <children xsi:type="menu:Menu" xmi:id="_gem1QFXdEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.menu.file" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_iLGzUFXdEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.handledmenuitem.exit" label="Exit" tooltip="Exit the application" command="_YkUCwFXeEeeeGZvEwkwEAQ"/>
       </children>
+      <children xsi:type="menu:Menu" xmi:id="_FfDGAFtYEeeMi5eBpWXriA" elementId="update_window_label_dynamic.menu.usermenu" label="UserMenu">
+        <children xsi:type="menu:DynamicMenuContribution" xmi:id="_5uENUFzuEeeUTYuEXrsKpQ" elementId="update_window_label_dynamic.dynamicmenucontribution.0" label="UserMenu" contributionURI="bundleclass://Update_Window_Label_Dynamic/update_window_label_dynamic.DynamicMenu"/>
+      </children>
     </mainMenu>
+    <trimBars xmi:id="_mVs80F7jEeeJafMY3dhW4Q" elementId="update_window_label_dynamic.trimbar.top">
+      <children xsi:type="menu:ToolBar" xmi:id="_odaQMF7jEeeJafMY3dhW4Q" elementId="update_window_label_dynamic.toolbar.0">
+        <children xsi:type="menu:DirectToolItem" xmi:id="_Ff0gkF8SEeeWQKwiyY_zFA" elementId="update_window_label_dynamic.directtoolitem.0" contributionURI="bundleclass://Update_Window_Label_Dynamic/update_window_label_dynamic.DynamicToolItem"/>
+      </children>
+    </trimBars>
   </children>
   <handlers xmi:id="_bM_VMFXeEeeeGZvEwkwEAQ" elementId="update_window_label_dynamic.handler.0" contributionURI="bundleclass://Update_Window_Label_Dynamic/update_window_label_dynamic.handlers.ExitHandler" command="_YkUCwFXeEeeeGZvEwkwEAQ"/>
   <rootContext xmi:id="_c3AF2cjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
