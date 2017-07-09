@@ -21,6 +21,12 @@ import org.eclipse.e4.ui.services.internal.events.EventBroker;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.nebula.widgets.tablecombo.TableCombo;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.DragDetectEvent;
+import org.eclipse.swt.events.DragDetectListener;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseMoveListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -83,6 +89,7 @@ public class MainWindowPart {
 		tableCombo = new TableCombo(childComposite, SWT.BORDER | SWT.READ_ONLY);
 		tableCombo.setLayoutData(new GridData(125, SWT.DEFAULT));
 		loadSampleData(tableCombo.getTable());
+		
 		tableCombo.addSelectionListener(new SelectedItemAdapter(tableCombo, "sample"));
 		tableCombo.addSelectionListener(new SelectionListener() {
 			
