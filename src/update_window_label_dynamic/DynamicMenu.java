@@ -10,6 +10,8 @@ import org.eclipse.e4.ui.model.application.ui.menu.MDirectMenuItem;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenuElement;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenuFactory;
 
+import update_window_label_dynamic.handlers.ExitHandler;
+
 public class DynamicMenu {
 	
 	
@@ -23,6 +25,7 @@ public class DynamicMenu {
 			
 			dynamicItem.setLabel("Dynamic Menu Item (" + new Date() + ")");
 			dynamicItem.setIconURI("platform:/plugin/Update_Window_Label_Dynamic/icons/sample.png");
+			dynamicItem.setContributionURI("bundleclass://Update_Window_Label_Dynamic/" + ExitHandler.class.getName());
 			
 			items.add(dynamicItem);
 		}
